@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2 - HTTP запросы</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid #ccc;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Задание 2. Отправка HTTP-запросов к веб-серверу</h1>
+
+    <section>
+        <h2>0. Загрузка файлов в каталог files через GitHub</h2>
+        <p>
+            Файлы (file.tar.gz, image.png и другие) были загружены в репозиторий GitHub,
+            после чего размещены на веб-сервере в каталоге /BackendTask2/files.
+            Проверена доступность файлов через браузер учебного домена.
+        </p>
+        <img src="github.png" alt="Загрузка файлов через GitHub">
+        <img src="clone.png" alt="Клонирование файлов через GitHub">
+    </section>
+
+    <section>
+        <h2>1. Получение главной страницы методом GET (HTTP/1.0)</h2>
+        <p>
+            Отправлен HTTP-запрос GET к главной странице сервера с использованием протокола HTTP/1.0
+        </p>
+        <img src="1_get_main.png" alt="GET главной страницы HTTP 1.0">
+    </section>
+
+    <section>
+        <h2>2. Получение внутренней страницы методом GET (HTTP/1.1)</h2>
+        <p>
+            Выполнен GET-запрос к внутренней странице сайта с использованием HTTP/1.1
+            и указанием заголовка Host.
+        </p>
+        <img src="2_get_inner.png" alt="GET внутренней страницы HTTP 1.1">
+    </section>
+
+    <section>
+        <h2>3. Определение размера файла file.tar.gz без скачивания (HEAD)</h2>
+        <p>
+            С помощью метода HEAD получены заголовки ответа сервера,
+            включая Content-Length, определяющий размер файла file.tar.gz.
+        </p>
+        <img src="3_file_size.png" alt="HEAD file.tar.gz Content-Length">
+    </section>
+
+    <section>
+        <h2>4. Определение медиатипа ресурса /image.png</h2>
+        <p>
+            Отправлен HEAD-запрос к ресурсу image.png для определения типа содержимого (Content-Type).
+        </p>
+        <img src="4_mime_type.png" alt="Content-Type image/png">
+    </section>
+
+    <section>
+        <h2>5. Отправка комментария на сервер по адресу /index.php (POST)</h2>
+        <p>
+            Выполнен POST-запрос с передачей данных формы (application/x-www-form-urlencoded)
+            на скрипт index.php через telnet.
+        </p>
+        <img src="5_post.png" alt="POST запрос к index.php">
+    </section>
+
+    <section>
+        <h2>6. Получение первых 100 байт файла /file.tar.gz</h2>
+        <p>
+            Использован заголовок Range (bytes=0-99) для получения первых 100 байт файла
+            без полной загрузки ресурса.
+        </p>
+        <img src="6_range.png" alt="Range bytes 0-99">
+    </section>
+
+    <section>
+        <h2>7. Определение кодировки ресурса /index.php</h2>
+        <p>
+            С помощью метода HEAD определена кодировка страницы по заголовку
+            Content-Type (charset).
+        </p>
+        <img src="7_charset.png" alt="Charset index.php">
+    </section>
+    <section>
+        <h2>8. Фиксация изменений в Git и синхронизация с GitHub</h2>
+
+        <p>
+            После выполнения задания все изменения были сохранены в локальном репозитории Git.
+            Файлы со скриншотами и HTML-страницей были добавлены в индекс, после чего создан коммит
+            и выполнена отправка изменений в удалённый репозиторий GitHub.
+        </p>
+
+        <p>
+            Для обновления файлов на сервере был выполнен pull из удалённого репозитория.
+        </p>
+        <img src="8_push.png" alt="Git push">
+        <img src="8_pull.png" alt="Charset index.php">
+    </section>
+
+</div>
+
+</body>
+</html>
